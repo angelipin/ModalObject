@@ -83,4 +83,9 @@ typedef enum {
 
 - (NSArray *)executeQuery:(ModalQuery *)query;
 + (NSArray *)executeQuery:(ModalQuery *)query;
+
+- (NSString *)tableName;
+- (NSString *)dbPath;
++ (NSString *)tableName;
++ (NSString *)dbPath;
 @end

@@ -549,4 +549,27 @@
     }
     return result;
 }
+
+- (NSString *)tableName {
+    return NSStringFromClass([self class]);
+}
+
+- (NSString *)dbPath {
+    if (_queue) {
+        return [_queue path];
+    }
+    return nil;
+}
+
++ (NSString *)tableName {
+    return NSStringFromClass([self class]);
+}
+
++ (NSString *)dbPath {
+    FMDatabaseQueue *queue = [[DatabaseManager defaultManager] connectionWithClass:NSStringFromClass([self class])];
+    if (queue) {
+        return [queue path];
+    }
+    return nil;
+}
 @end
