@@ -140,6 +140,74 @@
     return [array autorelease];
 }
 
++ (NSArray *)findObjectsByProperty:(NSString *)propertyName condition:(int)condition referenceValue:(id)value orderby:(NSString *)orderbyProperty order:(int)order {
+    FMDatabaseQueue *queue = [[DatabaseManager defaultManager] connectionWithClass:NSStringFromClass([self class])];
+    
+    __block NSMutableArray *array = [[NSMutableArray array] retain];
+    if (queue) {
+        [queue inDatabase:^(FMDatabase *db) {
+            NSMutableString *sql = [NSMutableString stringWithFormat:@"select * from %@ where %@", NSStringFromClass([self class]), propertyName];
+            switch (condition) {
+                case QueryConditionSame:
+                {
+                    [sql appendString:@" = ?"];
+                }
+                    break;
+                case QueryConditionGreaterThan:
+                {
+                    [sql appendString:@" > ?"];
+                }
+                    break;
+                case QueryConditionLessThan:
+                {
+                    [sql appendString:@" < ?"];
+                }
+                    break;
+                case QueryConditionNotGreaterThan:
+                {
+                    [sql appendString:@" <= ?"];
+                }
+                    break;
+                case QueryConditionNotLessThan:
+                {
+                    [sql appendString:@" >= ?"];
+                }
+                    break;
+                case QueryConditionNotSame:
+                {
+                    [sql appendString:@" != ?"];
+                }
+                    break;
+                default:
+                {
+                    [sql appendString:@" = ? "];
+                }
+                    break;
+            }
+            [sql appendFormat:@" order by %@", orderbyProperty];
+            
+            if (order > 0) {
+                [sql appendString:@" desc"];
+            }
+            else {
+                [sql appendString:@" asc"];
+            }
+            
+            FMResultSet *rs = [db executeQuery:sql, value];
+            while ([rs next]) {
+                id obj = [[self alloc] init];
+                [obj setValuesForKeysWithDictionary:[rs resultDictionary]];
+                [array addObject:obj];
+                [obj release];
+            }
+            if ([db hadError]){
+                NSLog_error(@"%@", [db lastErrorMessage]);
+            }
+        }];
+    }
+    return [array autorelease];
+}
+
 - (id)fill:(NSInteger)Id {
     if (_queue) {        
         [_queue inDatabase:^(FMDatabase *db) {
@@ -445,5 +513,40 @@
 + (void)initEnvironment {
     [DatabaseManager defaultManager];
     [DatabaseConnectionPool defaultConnectionPool];
+}
+
++ (ModalQuery *)newQuery {
+    return [[[ModalQuery alloc] initWithModal:[[[self alloc] init] autorelease]] autorelease];
+}
+
+- (ModalQuery *)newQuery {
+    return [[[ModalQuery alloc] initWithModal:self] autorelease];
+}
+
++ (NSArray *)executeQuery:(ModalQuery *)query {
+    __block NSMutableArray *result = [NSMutableArray array];
+    FMDatabaseQueue *queue = [[DatabaseManager defaultManager] connectionWithClass:NSStringFromClass([self class])];
+    if (queue) {
+        [queue inDatabase:^(FMDatabase *db) {
+            FMResultSet *rs = [db executeQuery:query];
+            while ([rs next]) {
+                [result addObject:[rs resultDictionary]];
+            }
+        }];
+    }
+    return result;
+}
+
+- (NSArray *)executeQuery:(ModalQuery *)query {
+    __block NSMutableArray *result = [NSMutableArray array];
+    if (_queue) {
+        [_queue inDatabase:^(FMDatabase *db) {
+            FMResultSet *rs = [db executeQuery:query];
+            while ([rs next]) {
+                [result addObject:[rs resultDictionary]];
+            }
+        }];
+    }
+    return result;
 }
 @end

@@ -26,6 +26,9 @@
 		26BDCA6516578091004FFD11 /* SyncModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 26BDCA6016578091004FFD11 /* SyncModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26BDCA6616578091004FFD11 /* SyncModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BDCA6116578091004FFD11 /* SyncModal.m */; };
 		26BDCA6716578091004FFD11 /* SyncModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BDCA6116578091004FFD11 /* SyncModal.m */; };
+		26BDCA881657F140004FFD11 /* ModalQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 26BDCA861657F140004FFD11 /* ModalQuery.h */; };
+		26BDCA891657F140004FFD11 /* ModalQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BDCA871657F140004FFD11 /* ModalQuery.m */; };
+		26BDCA8A1657F140004FFD11 /* ModalQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BDCA871657F140004FFD11 /* ModalQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,8 @@
 		26BDCA5F16578091004FFD11 /* Modal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Modal.m; sourceTree = "<group>"; };
 		26BDCA6016578091004FFD11 /* SyncModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncModal.h; sourceTree = "<group>"; };
 		26BDCA6116578091004FFD11 /* SyncModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncModal.m; sourceTree = "<group>"; };
+		26BDCA861657F140004FFD11 /* ModalQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalQuery.h; sourceTree = "<group>"; };
+		26BDCA871657F140004FFD11 /* ModalQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalQuery.m; sourceTree = "<group>"; };
 		26F5132016577DB2009CEE84 /* FMDatabase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FMDatabase.xcodeproj; path = ../FMDatabase/FMDatabase.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +148,8 @@
 				26BDCA5F16578091004FFD11 /* Modal.m */,
 				26BDCA6016578091004FFD11 /* SyncModal.h */,
 				26BDCA6116578091004FFD11 /* SyncModal.m */,
+				26BDCA861657F140004FFD11 /* ModalQuery.h */,
+				26BDCA871657F140004FFD11 /* ModalQuery.m */,
 				265380451656045B00EDCE10 /* Global.h */,
 				2653804B1656045B00EDCE10 /* Util */,
 				26537FA41655FF3A00EDCE10 /* Supporting Files */,
@@ -208,6 +215,7 @@
 				2653806A1656045B00EDCE10 /* Uuid.h in Headers */,
 				26BDCA6216578091004FFD11 /* Modal.h in Headers */,
 				26BDCA6516578091004FFD11 /* SyncModal.h in Headers */,
+				26BDCA881657F140004FFD11 /* ModalQuery.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +395,7 @@
 				2653806B1656045B00EDCE10 /* Uuid.m in Sources */,
 				26BDCA6316578091004FFD11 /* Modal.m in Sources */,
 				26BDCA6616578091004FFD11 /* SyncModal.m in Sources */,
+				26BDCA891657F140004FFD11 /* ModalQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +407,7 @@
 				2653806C1656045B00EDCE10 /* Uuid.m in Sources */,
 				26BDCA6416578091004FFD11 /* Modal.m in Sources */,
 				26BDCA6716578091004FFD11 /* SyncModal.m in Sources */,
+				26BDCA8A1657F140004FFD11 /* ModalQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
