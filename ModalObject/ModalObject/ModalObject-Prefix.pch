@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ModalObject' target in the 'ModalObject' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
