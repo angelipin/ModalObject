@@ -12,10 +12,14 @@
 @class FMDatabaseQueue;
 
 #define Property_Declear(Type, Property, Query, ...) @property (__VA_ARGS__) Type Property; \
-+ (id)Query:(id)value;
++ (id)Query:(id)value; \
++ (NSString *)Property##Columb;
 
 #define Property_Implement(Property, Query) + (id)Query:(id)value {   \
     return [self findObjectByProperty:@#Property equalValue:value];   \
+} \
++ (NSString *)Property##Columb { \
+    return @#Property; \
 }
 
 typedef enum {
