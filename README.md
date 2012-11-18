@@ -17,7 +17,7 @@ Property_Implement(title, queryTitle);  <br/>
 Property_Implement(publicDate, queryPublicDate);  <br/>
 Property_Implement(isbn, queryIsbn);<br/>
 
-- (void)dealloc {  <br/>
+= (void)dealloc {  <br/>
     [_author release]; <br/> 
     [_title release];  <br/>
     [_publicDate release];  <br/>
