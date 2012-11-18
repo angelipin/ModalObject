@@ -11,7 +11,7 @@ Property_Declear(NSDate *, publicDate, queryPublicDate, nonatomic, retain);<br/>
 Property_Declear(NSString *, isbn, queryIsbn, nonatomic, retain);<br/>
 @end<br/>
 # source file
-@implementation huangli  <br/>
+@implementation Book  <br/>
 Property_Implement(author, queryAuthor);  <br/>
 Property_Implement(title, queryTitle);  <br/>
 Property_Implement(publicDate, queryPublicDate);  <br/>
