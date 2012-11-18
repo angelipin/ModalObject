@@ -30,7 +30,7 @@ How to use:
 
 # first of all: 
 [Modal initEnvironment];<br/>
-// first copy db file to a writable directory
+// first copy db file to a writable directory <br/>
 [Book registeDatabase:@"Your database file path"];<br/>
 
 # Then We can use it like follow:
