@@ -26,7 +26,7 @@
 		26BDCA6516578091004FFD11 /* SyncModal.h in Headers */ = {isa = PBXBuildFile; fileRef = 26BDCA6016578091004FFD11 /* SyncModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26BDCA6616578091004FFD11 /* SyncModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BDCA6116578091004FFD11 /* SyncModal.m */; };
 		26BDCA6716578091004FFD11 /* SyncModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BDCA6116578091004FFD11 /* SyncModal.m */; };
-		26BDCA881657F140004FFD11 /* ModalQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 26BDCA861657F140004FFD11 /* ModalQuery.h */; };
+		26BDCA881657F140004FFD11 /* ModalQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 26BDCA861657F140004FFD11 /* ModalQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26BDCA891657F140004FFD11 /* ModalQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BDCA871657F140004FFD11 /* ModalQuery.m */; };
 		26BDCA8A1657F140004FFD11 /* ModalQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BDCA871657F140004FFD11 /* ModalQuery.m */; };
 /* End PBXBuildFile section */
